@@ -1,0 +1,253 @@
+/* Custom semantics */
+grid {
+    display: grid;
+}
+
+flex {
+    display: flex;
+}
+
+/* Utility classes */
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-wrap-wrap {
+    flex-wrap: wrap;
+}
+
+.align-items-flex-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
+}
+
+.align-items-space-between {
+    align-items: space-between;
+}
+
+.align-items-space-evenly {
+    align-items: space-around;
+}
+
+.align-items-space-evenly {
+    align-items: space-evenly;
+}
+
+.justify-content-flex-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+.justify-content-space-evenly {
+    justify-content: space-around;
+}
+
+.justify-content-space-evenly {
+    justify-content: space-evenly;
+}
+
+.gap-25 {
+    gap: .25em;
+}
+
+.gap-50 {
+    gap: .5em;
+}
+
+.gap-75 {
+    gap: .75em;
+}
+
+.gap-100 {
+    gap: 1em;
+}
+
+.gap-200 {
+    gap: 2em;
+}
+
+.gap-300 {
+    gap: 3em;
+}
+
+.gap-400 {
+    gap: 4em;
+}
+
+.gap-500 {
+    gap: 5em;
+}
+
+/* Forms */
+
+/* Text inputs (text, email, password, search, url) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"] {
+    background-color: lightgray;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="url"]:focus {
+    outline: none;
+    padding: 1em 1em calc(1em - 3px) 1em;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 3px solid #0075FF;
+}
+
+/* If the element has a border, this should target the border instead of an outline (and only change color so that file selection keeps dashed line) */
+
+/* Number inputs (number, tel) */
+input[type="number"],
+input[type="tel"] {
+    background-color: lightgray;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type="number"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    padding: 1em 1em calc(1em - 3px) 1em;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 3px solid #0075FF;}
+
+/* Button inputs (button, reset, submit, image) */
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="image"] {
+    background-color: lightgray;
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="image"]:focus {
+    outline: 3px solid #0075FF;
+}
+
+/* Date inputs (datetimeLocal, date, month, week, time) */
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"],
+input[type="week"] {
+    display: block;
+    width: 100%;
+    padding: .5em;
+    font-family: inherit;
+    border-radius: 3px;
+    border: 3px solid lightgray;
+}
+
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus {
+    border: 3px solid #0075FF;
+    outline: none;
+}
+
+/* File inputs (file) */
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    border-radius: 3px;
+    border: 3px dashed lightgray;
+    outline: none;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: lightgray;
+    border: none;
+    padding: .5em 1em;
+    border-radius: 3px;
+    margin: 0 .5em;
+    cursor: pointer;
+}
+
+input[type="file"]:focus {
+    border: 3px dashed #0075FF;
+}
+
+input[type="file"]:focus::file-selector-button {
+    background-color: #0075FF;
+    color: white;
+}
+
+/* Selection inputs (checkbox, radio, range color) */
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 1em .5em;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+    border: 3px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 3px;
+    border: none;
+}
+
+input[type="color"]::-moz-color-swatch {
+    border-radius: 3px;
+    border: none;
+}
+
+/* Hidden inputs (hidden)*/
