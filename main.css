@@ -1,3 +1,5 @@
+/* TODO: Figure out specificity (User :where() psuedo element? See input[type="file"]) */
+
 /* CSS reset */
 * {
     box-sizing: border-box;
@@ -189,21 +191,30 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 input[type="image"] {
-    background-color: lightgray;
+    background-color: #e0e6eb;
     display: block;
     width: 100%;
-    padding: 1em;
+    padding: .5rem;
     border: none;
     border-radius: 3px;
-    font-weight: bold;
+    transition: box-shadow .1s ease;
 }
 
 input[type="button"]:focus,
-input[type="reset"]:focus,
+input[type="reset"]:focus, 
 input[type="submit"]:focus,
-input[type="image"]:focus {
-    outline: 3px solid #0075FF;
+input[type="image"]:focus { 
+    outline: 2px solid #0075FF;
+    box-shadow: 0 0 .5rem -3px #0075FF;
 }
+
+input[type="button"]:hover,
+input[type="reset"]:hover, 
+input[type="submit"]:hover,
+input[type="image"]:hover {
+    box-shadow: inset 0 0 9999px rgba(0, 0, 0, .1);
+}
+
 
 /* Date inputs (datetimeLocal, date, month, week, time) */
 input[type="date"],
@@ -213,10 +224,11 @@ input[type="time"],
 input[type="week"] {
     display: block;
     width: 100%;
-    padding: .5em;
+    padding: .5rem;
     font-family: inherit;
     border-radius: 3px;
-    border: 3px solid lightgray;
+    border: 0;
+    background-color: #e0e6eb;
 }
 
 input[type="date"]:focus,
@@ -224,31 +236,32 @@ input[type="datetime-local"]:focus,
 input[type="month"]:focus,
 input[type="time"]:focus,
 input[type="week"]:focus {
-    border: 3px solid #0075FF;
-    outline: none;
+    outline: 2px solid #0075FF;
+    box-shadow: 0 0 .5rem -3px #0075FF;
 }
 
 /* File inputs (file) */
-input[type="file"] {
+
+:where(input[type="file"]) {
     display: block;
     width: 100%;
     padding: 1em;
     border-radius: 3px;
-    border: 3px dashed lightgray;
+    border: 2px dashed #e0e6eb;
     outline: none;
 }
 
 input[type="file"]::file-selector-button {
-    background-color: lightgray;
+    background-color: #e0e6eb;
     border: none;
-    padding: .5em 1em;
+    padding: .5rem 1rem;
     border-radius: 3px;
-    margin: 0 .5em;
+    margin: 0 .5rem;
     cursor: pointer;
 }
 
 input[type="file"]:focus {
-    border: 3px dashed #0075FF;
+    border: 2px dashed #0075FF;
 }
 
 input[type="file"]:focus::file-selector-button {
@@ -260,7 +273,7 @@ input[type="file"]:focus::file-selector-button {
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin: 1em .5em;
+    margin: 0;
 }
 
 input[type="range"] {
