@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "dev": "sass --watch main.scss:main.css",
+    "build": "sass main.scss:main.css && sass main.scss:main.min.css --style compressed"
+  },
   "dependencies": {
     "sass": "^1.70.0"
   }
