@@ -165,6 +165,7 @@ input[type="search"]:focus,
 input[type="url"]:focus {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
+    background-color: transparent;
 }
 
 /* If the element has a border, this should target the border instead of an outline (and only change color so that file selection keeps dashed line) */
@@ -184,6 +185,7 @@ input[type="number"]:focus,
 input[type="tel"]:focus {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
+    background-color: transparent;
 }
 
 /* Button inputs (button, reset, submit, image) */
@@ -238,6 +240,7 @@ input[type="time"]:focus,
 input[type="week"]:focus {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
+    background-color: transparent;
 }
 
 /* File inputs (file) */
