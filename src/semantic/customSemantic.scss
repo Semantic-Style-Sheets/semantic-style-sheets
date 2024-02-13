@@ -1,0 +1,17 @@
+/* Custom semantics */
+grid {
+    display: grid;
+}
+
+flex {
+    display: flex;
+}
+
+block {
+    display: block;
+}
+
+container {
+    display: block;
+    width: min(90ch, 100%);
+}

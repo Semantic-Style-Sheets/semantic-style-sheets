@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "sass --watch main.scss:./output/main.css",
-    "build": "sass main.scss:./output/main.css && sass main.scss:./output/main.min.css --style compressed"
+    "dev": "sass --watch ./src/main.scss:./output/main.css",
+    "build": "sass ./src/main.scss:./output/main.css && sass ./src/main.scss:./output/main.min.css --style compressed"
   },
   "dependencies": {
     "sass": "^1.70.0"
