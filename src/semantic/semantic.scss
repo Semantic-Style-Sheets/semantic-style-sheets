@@ -1,11 +1,13 @@
 /* Forms */
 
 /* Text inputs (text, email, password, search, url) */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="url"] {
+:where(
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"]
+) {
     background-color: #e0e6eb;
     display: block;
     width: 100%;
@@ -14,11 +16,13 @@ input[type="url"] {
     border-radius: 3px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="url"]:focus {
+:where(
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="search"]:focus,
+    input[type="url"]:focus 
+) {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
     background-color: transparent;
@@ -27,8 +31,10 @@ input[type="url"]:focus {
 /* If the element has a border, this should target the border instead of an outline (and only change color so that file selection keeps dashed line) */
 
 /* Number inputs (number, tel) */
-input[type="number"],
-input[type="tel"] {
+:where(
+    input[type="number"],
+    input[type="tel"] 
+) {
     background-color: #e0e6eb;
     display: block;
     width: 100%;
@@ -37,18 +43,22 @@ input[type="tel"] {
     border-radius: 3px;
 }
 
-input[type="number"]:focus,
-input[type="tel"]:focus {
+:where(
+    input[type="number"]:focus,
+    input[type="tel"]:focus
+) {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
     background-color: transparent;
 }
 
 /* Button inputs (button, reset, submit, image) */
-input[type="button"],
-input[type="reset"], 
-input[type="submit"],
-input[type="image"] {
+:where(
+    input[type="button"],
+    input[type="reset"], 
+    input[type="submit"],
+    input[type="image"]
+) {
     background-color: #e0e6eb;
     display: block;
     width: 100%;
@@ -58,28 +68,33 @@ input[type="image"] {
     transition: box-shadow .1s ease;
 }
 
-input[type="button"]:focus,
-input[type="reset"]:focus, 
-input[type="submit"]:focus,
-input[type="image"]:focus { 
+:where(
+    input[type="button"]:focus,
+    input[type="reset"]:focus, 
+    input[type="submit"]:focus,
+    input[type="image"]:focus
+) { 
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
 }
 
-input[type="button"]:hover,
-input[type="reset"]:hover, 
-input[type="submit"]:hover,
-input[type="image"]:hover {
+:where(
+    input[type="button"]:hover,
+    input[type="reset"]:hover, 
+    input[type="submit"]:hover,
+    input[type="image"]:hover 
+) {
     box-shadow: inset 0 0 9999px rgba(0, 0, 0, .1);
 }
 
-
 /* Date inputs (datetimeLocal, date, month, week, time) */
-input[type="date"],
-input[type="datetime-local"],
-input[type="month"],
-input[type="time"],
-input[type="week"] {
+:where(
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"]
+ ) {
     display: block;
     width: 100%;
     padding: .5rem;
@@ -89,11 +104,13 @@ input[type="week"] {
     background-color: #e0e6eb;
 }
 
-input[type="date"]:focus,
-input[type="datetime-local"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus {
+:where(
+    input[type="date"]:focus,
+    input[type="datetime-local"]:focus,
+    input[type="month"]:focus,
+    input[type="time"]:focus,
+    input[type="week"]:focus
+) {
     outline: 2px solid #0075FF;
     box-shadow: 0 0 .5rem -3px #0075FF;
     background-color: transparent;
@@ -101,7 +118,9 @@ input[type="week"]:focus {
 
 /* File inputs (file) */
 
-:where(input[type="file"]) {
+:where(
+    input[type="file"]
+) {
     display: block;
     width: 100%;
     padding: 1em;
@@ -110,7 +129,7 @@ input[type="week"]:focus {
     outline: none;
 }
 
-input[type="file"]::file-selector-button {
+input[type="file"]::file-selector-button { /* TODO: :where() for pseudo elements not supported? */
     background-color: #e0e6eb;
     border: none;
     padding: .5rem 1rem;
@@ -119,42 +138,53 @@ input[type="file"]::file-selector-button {
     cursor: pointer;
 }
 
-input[type="file"]:focus {
+:where(
+    input[type="file"]:focus
+) {
     border: 2px dashed #0075FF;
 }
 
-input[type="file"]:focus::file-selector-button {
+input[type="file"]:focus::file-selector-button { /* TODO: :where() for pseudo elements not supported? */
     background-color: #0075FF;
     color: white;
 }
 
 /* Selection inputs (checkbox, radio, range color) */
 
-input[type="radio"],
-input[type="checkbox"] {
+:where(
+    input[type="radio"],
+    input[type="checkbox"] 
+) {
     margin: 0;
 }
-
-input[type="range"] {
+    
+:where(
+    input[type="range"] 
+) {
     display: block;
     width: 100%;
 }
 
-input[type="color"] {
+:where(
+    input[type="color"] 
+) {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 3px;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: 100%;
     border: 3px;
+    background-color: #e0e6eb;
 }
 
-input[type="color"]::-webkit-color-swatch {
-    border-radius: 3px;
+input[type="color"]::-webkit-color-swatch { /* TODO: :where() for pseudo elements not supported? */
+    border-radius: 100%;
     border: none;
 }
 
-input[type="color"]::-moz-color-swatch {
-    border-radius: 3px;
+input[type="color"]::-moz-color-swatch { /* TODO: :where() for pseudo elements not supported? */
+    border-radius: 100%;
     border: none;
 }
 
@@ -162,15 +192,19 @@ input[type="color"]::-moz-color-swatch {
 
 /* Button */
 
-button {
+:where(
+    button
+) {
     background-color: #e0e6eb;
     border: 0;
     border-radius: 3px;
-    padding-block: .25rem;
+    padding-block: .5rem;
     padding-inline: 1rem;
     transition: box-shadow .1s ease;
 }
 
-button:hover {
+:where(
+    button:hover
+) {
     box-shadow: inset 0 0 999px rgba(0, 0, 0, .1);
 }
