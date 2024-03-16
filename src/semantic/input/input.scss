@@ -1,57 +1,38 @@
-/* Forms */
+@mixin input {
+    background-color: #e0e6eb;
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+    &:focus {
+        outline: 2px solid #0075FF;
+        box-shadow: 0 0 .5rem -3px #0075FF;
+        background-color: transparent;
+    }
+}
 
 /* Text inputs (text, email, password, search, url) */
+/* Number inputs (number, tel) */
+/* Date inputs (datetimeLocal, date, month, week, time) */
 :where(
     input[type="text"],
     input[type="email"],
     input[type="password"],
     input[type="search"],
-    input[type="url"]
-) {
-    background-color: #e0e6eb;
-    display: block;
-    width: 100%;
-    padding: .5rem;
-    border: none;
-    border-radius: 3px;
-}
-
-:where(
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="password"]:focus,
-    input[type="search"]:focus,
-    input[type="url"]:focus 
-) {
-    outline: 2px solid #0075FF;
-    box-shadow: 0 0 .5rem -3px #0075FF;
-    background-color: transparent;
-}
-
-/* If the element has a border, this should target the border instead of an outline (and only change color so that file selection keeps dashed line) */
-
-/* Number inputs (number, tel) */
-:where(
+    input[type="url"],
     input[type="number"],
-    input[type="tel"] 
-) {
-    background-color: #e0e6eb;
-    display: block;
-    width: 100%;
-    padding: .5rem;
-    border: none;
-    border-radius: 3px;
-}
+    input[type="tel"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"]
 
-:where(
-    input[type="number"]:focus,
-    input[type="tel"]:focus
 ) {
-    outline: 2px solid #0075FF;
-    box-shadow: 0 0 .5rem -3px #0075FF;
-    background-color: transparent;
+    @include input;
 }
-
+ 
 /* Button inputs (button, reset, submit, image) */
 :where(
     input[type="button"],
@@ -85,35 +66,6 @@
     input[type="image"]:hover 
 ) {
     box-shadow: inset 0 0 9999px rgba(0, 0, 0, .1);
-}
-
-/* Date inputs (datetimeLocal, date, month, week, time) */
-:where(
-    input[type="date"],
-    input[type="datetime-local"],
-    input[type="month"],
-    input[type="time"],
-    input[type="week"]
- ) {
-    display: block;
-    width: 100%;
-    padding: .5rem;
-    font-family: inherit;
-    border-radius: 3px;
-    border: 0;
-    background-color: #e0e6eb;
-}
-
-:where(
-    input[type="date"]:focus,
-    input[type="datetime-local"]:focus,
-    input[type="month"]:focus,
-    input[type="time"]:focus,
-    input[type="week"]:focus
-) {
-    outline: 2px solid #0075FF;
-    box-shadow: 0 0 .5rem -3px #0075FF;
-    background-color: transparent;
 }
 
 /* File inputs (file) */
@@ -187,30 +139,4 @@ input[type="color"]::-moz-color-swatch { /* TODO: :where() for pseudo elements n
     border-radius: 100%;
     border: none;
 }
-
-/* Hidden inputs (hidden) */
-
-/* Button */
-
-:where(
-    button
-) {
-    background-color: #e0e6eb;
-    border: 0;
-    border-radius: 3px;
-    padding-block: .5rem;
-    padding-inline: 1rem;
-    transition: box-shadow .1s ease;
-}
-
-:where(
-    button:hover
-) {
-    box-shadow: inset 0 0 999px rgba(0, 0, 0, .1);
-}
-
-:where(
-    button:active
-) {
-    transform: scale(.95);
-}
+ 
