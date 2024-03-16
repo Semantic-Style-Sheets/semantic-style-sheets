@@ -1,7 +1,3 @@
-index.html
-index.js
 node_modules
-main.css
-main.css.map
-main.min.css
-main.min.css.map
+/dev/output
+/build

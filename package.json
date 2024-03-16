@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "sass:watch": "sass --watch ./src/main.scss:./output/main.css && node index.js",
-    "node:watch": "node --watch-path=./ index.js",
+    "sass:watch": "sass --watch ./src/main.scss:./dev/output/main.css && node ./dev/index.js",
+    "node:watch": "node --watch-path=./dev ./dev/index.js",
     "dev": "run-p node:watch sass:watch",
-    "build": "sass ./src/main.scss:./output/main.css && sass ./src/main.scss:./output/main.min.css --style compressed"
+    "build": "sass ./src/main.scss:./dev/output/main.css && sass ./src/main.scss:./dev/output/main.min.css --style compressed"
   },
   "dependencies": {
     "compression": "^1.7.4",

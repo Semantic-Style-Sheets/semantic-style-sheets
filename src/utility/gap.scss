@@ -2,6 +2,6 @@ $multipliers: 25 50 75 100 200 300 400 500;
 
 @each $multiplier in $multipliers {
     .gap-#{$multiplier} {
-      padding: #{$multiplier / 100}rem;
+      padding: calc($multiplier / 100) + rem;
     }
   }
