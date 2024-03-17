@@ -1,0 +1,50 @@
+$multipliers: 25 50 75 100 200 300 400 500;
+
+// Margin 
+@each $multiplier in $multipliers {
+  .margin-#{$multiplier} {
+    margin: calc($multiplier / 100) + rem;
+  }
+}
+ 
+// Margin Y 
+@each $multiplier in $multipliers {
+    .margin-y-#{$multiplier} {
+      margin-block: calc($multiplier / 100) + rem;
+    }
+}
+
+// Margin X
+@each $multiplier in $multipliers {
+    .margin-x-#{$multiplier} {
+      margin-inline: calc($multiplier / 100) + rem;
+    }
+}
+ 
+// Margin Top
+@each $multiplier in $multipliers {
+    .margin-top-#{$multiplier} {
+      margin-top: calc($multiplier / 100) + rem;
+    }
+}
+
+// Margin Right
+@each $multiplier in $multipliers {
+    .margin-right-#{$multiplier} {
+      margin-right: calc($multiplier / 100) + rem;
+    }
+}
+
+// Margin Bottom
+@each $multiplier in $multipliers {
+    .margin-bottom-#{$multiplier} {
+      margin-bottom: calc($multiplier / 100) + rem;
+    }
+}
+
+// Margin Left
+@each $multiplier in $multipliers {
+    .margin-left-#{$multiplier} {
+      margin-left: calc($multiplier / 100) + rem;
+    }
+}

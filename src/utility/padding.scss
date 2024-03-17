@@ -1,0 +1,50 @@
+$multipliers: 25 50 75 100 200 300 400 500;
+
+// padding 
+@each $multiplier in $multipliers {
+  .padding-#{$multiplier} {
+    padding: calc($multiplier / 100) + rem;
+  }
+}
+ 
+// padding Y 
+@each $multiplier in $multipliers {
+    .padding-y-#{$multiplier} {
+      padding-block: calc($multiplier / 100) + rem;
+    }
+}
+
+// padding X
+@each $multiplier in $multipliers {
+    .padding-x-#{$multiplier} {
+      padding-inline: calc($multiplier / 100) + rem;
+    }
+}
+ 
+// padding Top
+@each $multiplier in $multipliers {
+    .padding-top-#{$multiplier} {
+      padding-top: calc($multiplier / 100) + rem;
+    }
+}
+
+// padding Right
+@each $multiplier in $multipliers {
+    .padding-right-#{$multiplier} {
+      padding-right: calc($multiplier / 100) + rem;
+    }
+}
+
+// padding Bottom
+@each $multiplier in $multipliers {
+    .padding-bottom-#{$multiplier} {
+      padding-bottom: calc($multiplier / 100) + rem;
+    }
+}
+
+// padding Left
+@each $multiplier in $multipliers {
+    .padding-left-#{$multiplier} {
+      padding-left: calc($multiplier / 100) + rem;
+    }
+}

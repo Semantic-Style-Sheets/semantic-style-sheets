@@ -1,0 +1,22 @@
+
+:where(
+    button
+) {
+    background-color: #e0e6eb;
+    border: 0;
+    border-radius: 3px;
+    padding: .5rem;
+    transition: box-shadow .1s ease;
+}
+
+:where(
+    button:hover
+) {
+    box-shadow: inset 0 0 999px rgba(0, 0, 0, .1);
+}
+
+:where(
+    button:active
+) {
+    transform: scale(.95);
+}
