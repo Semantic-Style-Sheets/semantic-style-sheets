@@ -7,16 +7,16 @@ $multipliers: 25 50 75 100 200 300 400 500;
   }
 }
  
-// Margin Y 
+// Margin block (Y-axis) 
 @each $multiplier in $multipliers {
-    .margin-y-#{$multiplier} {
+    .margin-block-#{$multiplier} {
       margin-block: calc($multiplier / 100) + rem;
     }
 }
 
-// Margin X
+// Margin inline (X-axis)
 @each $multiplier in $multipliers {
-    .margin-x-#{$multiplier} {
+    .margin-inline-#{$multiplier} {
       margin-inline: calc($multiplier / 100) + rem;
     }
 }

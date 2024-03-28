@@ -7,16 +7,16 @@ $multipliers: 25 50 75 100 200 300 400 500;
   }
 }
  
-// padding Y 
+// padding block (Y-axis) 
 @each $multiplier in $multipliers {
-    .padding-y-#{$multiplier} {
+    .padding-block-#{$multiplier} {
       padding-block: calc($multiplier / 100) + rem;
     }
 }
 
-// padding X
+// padding inline X
 @each $multiplier in $multipliers {
-    .padding-x-#{$multiplier} {
+    .padding-inline-#{$multiplier} {
       padding-inline: calc($multiplier / 100) + rem;
     }
 }
