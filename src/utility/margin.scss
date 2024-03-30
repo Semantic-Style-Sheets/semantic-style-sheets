@@ -1,50 +1,50 @@
 $multipliers: 25 50 75 100 200 300 400 500;
 
-// Margin 
+// Margin
 @each $multiplier in $multipliers {
   .margin-#{$multiplier} {
     margin: calc($multiplier / 100) + rem;
   }
 }
- 
-// Margin block (Y-axis) 
+
+// Margin block (Y-axis)
 @each $multiplier in $multipliers {
-    .margin-block-#{$multiplier} {
-      margin-block: calc($multiplier / 100) + rem;
-    }
+  .margin-block-#{$multiplier} {
+    margin-block: calc($multiplier / 100) + rem;
+  }
 }
 
 // Margin inline (X-axis)
 @each $multiplier in $multipliers {
-    .margin-inline-#{$multiplier} {
-      margin-inline: calc($multiplier / 100) + rem;
-    }
+  .margin-inline-#{$multiplier} {
+    margin-inline: calc($multiplier / 100) + rem;
+  }
 }
- 
+
 // Margin Top
 @each $multiplier in $multipliers {
-    .margin-top-#{$multiplier} {
-      margin-top: calc($multiplier / 100) + rem;
-    }
+  .margin-top-#{$multiplier} {
+    margin-top: calc($multiplier / 100) + rem;
+  }
 }
 
 // Margin Right
 @each $multiplier in $multipliers {
-    .margin-right-#{$multiplier} {
-      margin-right: calc($multiplier / 100) + rem;
-    }
+  .margin-right-#{$multiplier} {
+    margin-right: calc($multiplier / 100) + rem;
+  }
 }
 
 // Margin Bottom
 @each $multiplier in $multipliers {
-    .margin-bottom-#{$multiplier} {
-      margin-bottom: calc($multiplier / 100) + rem;
-    }
+  .margin-bottom-#{$multiplier} {
+    margin-bottom: calc($multiplier / 100) + rem;
+  }
 }
 
 // Margin Left
 @each $multiplier in $multipliers {
-    .margin-left-#{$multiplier} {
-      margin-left: calc($multiplier / 100) + rem;
-    }
+  .margin-left-#{$multiplier} {
+    margin-left: calc($multiplier / 100) + rem;
+  }
 }

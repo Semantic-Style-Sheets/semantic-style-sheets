@@ -1,14 +1,34 @@
 $displayValues: (
-  block, inline, inline-block, flex, inline-flex, grid, inline-grid, flow-root,
-  none, contents,
-  block flex, block flow, block flow-root, block grid,
-  inline flex, inline flow, inline flow-root, inline grid,
-  table, table-row, list-item,
-  inherit, initial, revert, revert-layer, unset
+  block,
+  inline,
+  inline-block,
+  flex,
+  inline-flex,
+  grid,
+  inline-grid,
+  flow-root,
+  none,
+  contents,
+  block flex,
+  block flow,
+  block flow-root,
+  block grid,
+  inline flex,
+  inline flow,
+  inline flow-root,
+  inline grid,
+  table,
+  table-row,
+  list-item,
+  inherit,
+  initial,
+  revert,
+  revert-layer,
+  unset
 );
 
 @each $value in $displayValues {
-    .display-#{$value} {
-      display: #{$value};
-    }
+  .display-#{$value} {
+    display: #{$value};
   }
+}
