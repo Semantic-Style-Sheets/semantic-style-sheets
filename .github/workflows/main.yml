@@ -1,4 +1,4 @@
-name: SCSS Build
+name: Build SCSS
 
 on:
   push:
@@ -15,9 +15,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4.1.2
-
-    - name: Install Node.js
-      uses: actions/setup-node@v4.0.2
       
     - name: Install Sass
       run: npm install -g sass
