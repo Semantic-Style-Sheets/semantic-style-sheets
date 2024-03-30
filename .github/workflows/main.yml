@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-node@v4.0.2
       
     - name: Install Sass
-      run: npm install sass
+      run: npm install -g sass
       
     - name: Build SCSS
       run: |
