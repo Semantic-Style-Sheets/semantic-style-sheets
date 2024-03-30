@@ -1,0 +1,31 @@
+name: SCSS Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.1.2
+      
+    - name: Install Sass
+      run: npm install sass
+      
+    - name: Build SCSS
+      run: |
+        sass ./src/main.scss:./build/main.css
+        sass ./src/main.scss:./build/main.min.css --style compressed
+        
+    - name: Archive SCSS artifacts
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        name: SCSS-artifacts
+        path: ./build
