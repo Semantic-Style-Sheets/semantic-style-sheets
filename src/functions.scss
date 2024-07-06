@@ -1,0 +1,10 @@
+// Replace `$substring` with `$value` in `$string`
+@function str-replace($string, $substring, $value: '') {
+    $index: str-index($string, $substring);
+    
+    @if $index {
+      @return str-slice($string, 1, $index - 1) + $value + str-replace(str-slice($string, $index + str-length($substring)), $substring, $value);
+    }
+    
+    @return $string;
+}
