@@ -1,52 +1,76 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 
-$multipliers: 0 25 50 75 100 200 300 400 500;
+@import '../values.scss';
 
 // padding
-@each $multiplier in $multipliers {
+@each $multiplier in $root-em-multipliers {
   .padding-#{$multiplier} {
     padding: calc($multiplier / 100) + rem;
   }
-}
 
-// padding block (Y-axis)
-@each $multiplier in $multipliers {
+  // padding block (Y-axis)
   .padding-block-#{$multiplier} {
     padding-block: calc($multiplier / 100) + rem;
   }
-}
 
-// padding inline X
-@each $multiplier in $multipliers {
+  // padding inline X
   .padding-inline-#{$multiplier} {
     padding-inline: calc($multiplier / 100) + rem;
   }
-}
 
-// padding Top
-@each $multiplier in $multipliers {
+  // padding Top
   .padding-top-#{$multiplier} {
     padding-top: calc($multiplier / 100) + rem;
   }
-}
 
-// padding Right
-@each $multiplier in $multipliers {
+  // padding Right
   .padding-right-#{$multiplier} {
     padding-right: calc($multiplier / 100) + rem;
   }
-}
 
-// padding Bottom
-@each $multiplier in $multipliers {
+  // padding Bottom
   .padding-bottom-#{$multiplier} {
     padding-bottom: calc($multiplier / 100) + rem;
   }
-}
 
-// padding Left
-@each $multiplier in $multipliers {
+  // padding Left
   .padding-left-#{$multiplier} {
     padding-left: calc($multiplier / 100) + rem;
+  }
+}
+
+@each $value in $global-values {
+  .padding-#{$value} {
+    padding: $value;
+  }
+
+  // padding block (Y-axis)
+  .padding-block-#{$value} {
+    padding-block: $value;
+  }
+
+  // padding inline X
+  .padding-inline-#{$value} {
+    padding-inline: $value;
+  }
+
+  // padding Top
+  .padding-top-#{$value} {
+    padding-top: $value;
+  }
+
+  // padding Right
+  .padding-right-#{$value} {
+    padding-right: $value;
+  }
+
+  // padding Bottom
+  .padding-bottom-#{$value} {
+    padding-bottom: $value;
+  }
+
+  // padding Left
+  .padding-left-#{$value} {
+    padding-left: $value;
   }
 }

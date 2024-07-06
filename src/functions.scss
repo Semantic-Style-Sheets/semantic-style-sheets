@@ -1,4 +1,12 @@
-// Replace `$substring` with `$value` in `$string`
+/// Replaces `$substring` with `$value` in `$string`
+/// 
+/// @param {string} $string
+///     The string from which you want to replace a value
+/// @param {string} $substring
+///     The substring that you whish to replace
+/// @param {string} $value 
+///     The value which you want to replace the substring with (default '')
+/// @return {string} `$string` where `$substring` is equal to `$value`  
 @function str-replace($string, $substring, $value: '') {
     $index: str-index($string, $substring);
     
