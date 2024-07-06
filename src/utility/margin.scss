@@ -1,52 +1,37 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/margin
 
-$multipliers: 0 25 50 75 100 200 300 400 500;
+// ACCEPTED VALUES
+// <length>
+// <percentage>
+// auto
 
-// Margin
-@each $multiplier in $multipliers {
-  .margin-#{$multiplier} {
-    margin: calc($multiplier / 100) + rem;
+$class-names: (
+  'margin',
+  'margin-block',
+  'margin-inline',
+  'margin-top',
+  'margin-right',
+  'margin-bottom',
+  'margin-left'
+);
+
+@import '../values.scss';
+
+@each $class-name in $class-names {
+  @each $multiplier in $root-em-multipliers {
+    .#{$class-name}-#{$multiplier} {
+      #{$class-name}: calc($multiplier / 100) + rem;
+    }
+  }
+
+  @each $value in $global-values {
+    .#{$class-name}-#{$value} {
+      #{$class-name}: $value;
+    }
+  }
+
+  .#{$class-name}-auto {
+    #{$class-name}: auto;
   }
 }
 
-// Margin block (Y-axis)
-@each $multiplier in $multipliers {
-  .margin-block-#{$multiplier} {
-    margin-block: calc($multiplier / 100) + rem;
-  }
-}
-
-// Margin inline (X-axis)
-@each $multiplier in $multipliers {
-  .margin-inline-#{$multiplier} {
-    margin-inline: calc($multiplier / 100) + rem;
-  }
-}
-
-// Margin Top
-@each $multiplier in $multipliers {
-  .margin-top-#{$multiplier} {
-    margin-top: calc($multiplier / 100) + rem;
-  }
-}
-
-// Margin Right
-@each $multiplier in $multipliers {
-  .margin-right-#{$multiplier} {
-    margin-right: calc($multiplier / 100) + rem;
-  }
-}
-
-// Margin Bottom
-@each $multiplier in $multipliers {
-  .margin-bottom-#{$multiplier} {
-    margin-bottom: calc($multiplier / 100) + rem;
-  }
-}
-
-// Margin Left
-@each $multiplier in $multipliers {
-  .margin-left-#{$multiplier} {
-    margin-left: calc($multiplier / 100) + rem;
-  }
-}
