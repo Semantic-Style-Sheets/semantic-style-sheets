@@ -11,3 +11,9 @@
     gap: calc($multiplier / 100) + rem;
   }
 }
+
+@each $value in $global-values {
+  .gap-#{$value} {
+    gap: #{$value};
+  }
+}
