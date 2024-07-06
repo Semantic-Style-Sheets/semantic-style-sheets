@@ -31,7 +31,9 @@ Located in [./src/utility](./src/utility).
 
 Utility classes are based on CSS properties outlined in the [mdn web docs CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 
-As of release 0.1.0 all properties which require an undefined value, e.g `px` or `%`, are defined using `rem` with values ranging from .25 - 5. Classnames for theese properties are set to the value multiplied by 100.
+As of release 0.1.0 all properties which require a `<length>` value are defined using `rem` with values ranging from .25 - 5.  Classnames for theese properties are set to the value multiplied by 100.
+
+> **_NOTE:_**  `<percentage>` values are not yet supported
 
 For example: 
 ```css
