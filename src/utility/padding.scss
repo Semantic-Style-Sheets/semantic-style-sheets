@@ -1,4 +1,6 @@
-$multipliers: 25 50 75 100 200 300 400 500;
+// https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+
+$multipliers: 0 25 50 75 100 200 300 400 500;
 
 // padding
 @each $multiplier in $multipliers {

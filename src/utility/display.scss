@@ -1,3 +1,7 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+@import '../functions.scss';
+
 $displayValues: (
   block,
   inline,
@@ -28,7 +32,9 @@ $displayValues: (
 );
 
 @each $value in $displayValues {
-  .display-#{$value} {
+  $stringValue: inspect($value); // Convert the value to a string
+  $class-name: str-replace($stringValue, ' ', '-');
+  .display-#{$class-name} {
     display: #{$value};
   }
 }
