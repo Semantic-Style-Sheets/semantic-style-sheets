@@ -1,9 +1,20 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
 
+// ACCEPTED VALUES
+// <number>
+
+@import '../values.scss';
+
 $multipliers: 0 25 50 75 100 200 300 400 500;
 
 @each $multiplier in $multipliers {
   .flex-grow-#{$multiplier} {
     flex-grow: calc($multiplier / 100);
+  }
+}
+
+@each $value in $global-values {
+  .flex-grow-#{$value} {
+    flex-grow: #{$value};
   }
 }

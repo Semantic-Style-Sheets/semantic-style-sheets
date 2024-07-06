@@ -1,9 +1,19 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/gap
 
-$multipliers: 0 25 50 75 100 200 300 400 500;
+// ACCEPTED VALUES
+// <length>
+// <percentage>
 
-@each $multiplier in $multipliers {
+@import '../values.scss';
+
+@each $multiplier in $root-em-multipliers {
   .gap-#{$multiplier} {
     gap: calc($multiplier / 100) + rem;
+  }
+}
+
+@each $value in $global-values {
+  .gap-#{$value} {
+    gap: #{$value};
   }
 }
