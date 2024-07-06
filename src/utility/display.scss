@@ -1,7 +1,9 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/display
 
 @import '../functions.scss';
+@import '../values.scss';
 
+// TODO: Find out if there are more values here?
 $displayValues: (
   block,
   inline,
@@ -24,14 +26,17 @@ $displayValues: (
   table,
   table-row,
   list-item,
-  inherit,
-  initial,
-  revert,
-  revert-layer,
-  unset
 );
 
 @each $value in $displayValues {
+  $stringValue: inspect($value); // Convert the value to a string
+  $class-name: str-replace($stringValue, ' ', '-');
+  .display-#{$class-name} {
+    display: #{$value};
+  }
+}
+
+@each $value in $global-values {
   $stringValue: inspect($value); // Convert the value to a string
   $class-name: str-replace($stringValue, ' ', '-');
   .display-#{$class-name} {

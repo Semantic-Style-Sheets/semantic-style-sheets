@@ -1,52 +1,35 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 
-$multipliers: 0 25 50 75 100 200 300 400 500;
+// ACCEPTED VALUES
+// <length>
+// <percentage>
 
-// padding
-@each $multiplier in $multipliers {
-  .padding-#{$multiplier} {
-    padding: calc($multiplier / 100) + rem;
+$class-names: (
+  'padding',
+  'padding-block',
+  'padding-block-start',
+  'padding-block-end',
+  'padding-inline',
+  'padding-inline-start',
+  'padding-inline-end',
+  'padding-top',
+  'padding-right',
+  'padding-bottom',
+  'padding-left'
+);
+
+@import '../values.scss';
+
+@each $class-name in $class-names {
+  @each $multiplier in $root-em-multipliers {
+    .#{$class-name}-#{$multiplier} {
+      #{$class-name}: calc($multiplier / 100) + rem;
+    }
   }
-}
 
-// padding block (Y-axis)
-@each $multiplier in $multipliers {
-  .padding-block-#{$multiplier} {
-    padding-block: calc($multiplier / 100) + rem;
-  }
-}
-
-// padding inline X
-@each $multiplier in $multipliers {
-  .padding-inline-#{$multiplier} {
-    padding-inline: calc($multiplier / 100) + rem;
-  }
-}
-
-// padding Top
-@each $multiplier in $multipliers {
-  .padding-top-#{$multiplier} {
-    padding-top: calc($multiplier / 100) + rem;
-  }
-}
-
-// padding Right
-@each $multiplier in $multipliers {
-  .padding-right-#{$multiplier} {
-    padding-right: calc($multiplier / 100) + rem;
-  }
-}
-
-// padding Bottom
-@each $multiplier in $multipliers {
-  .padding-bottom-#{$multiplier} {
-    padding-bottom: calc($multiplier / 100) + rem;
-  }
-}
-
-// padding Left
-@each $multiplier in $multipliers {
-  .padding-left-#{$multiplier} {
-    padding-left: calc($multiplier / 100) + rem;
+  @each $value in $global-values {
+    .#{$class-name}-#{$value} {
+      #{$class-name}: $value;
+    }
   }
 }

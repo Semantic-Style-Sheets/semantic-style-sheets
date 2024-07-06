@@ -1,5 +1,14 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 
+// ACCEPTED VALUES
+// Normal
+// Bold
+// <number>
+// lighter
+// bolder
+
+@import '../values.scss';
+
 $values: (
   normal,
   bold,
@@ -14,14 +23,15 @@ $values: (
   900,
   lighter,
   bolder,
-  inherit,
-  initial,
-  revert,
-  revert-layer,
-  unset
 );
 
 @each $value in $values {
+  .font-weight-#{$value} {
+    font-weight: #{$value};
+  }
+}
+
+@each $value in $global-values {
   .font-weight-#{$value} {
     font-weight: #{$value};
   }
