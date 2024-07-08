@@ -34,6 +34,11 @@ $displayValues: (
   .display-#{$class-name} {
     display: #{$value};
   }
+
+  .#{$class-name} {
+    display: $value;
+  }
+
 }
 
 @each $value in $global-values {

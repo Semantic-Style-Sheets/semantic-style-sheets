@@ -1,0 +1,30 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/position
+
+// ACCEPTED VALUES 
+// static
+// relative
+// absolute
+// fixed
+// sticky
+
+$values: (
+  'static',
+  'relative',
+  'absolute',
+  'fixed',
+  'sticky'
+);
+
+@import '../values.scss';
+
+@each $value in $values {
+  .position-#{$value} {
+    position: $value;
+  }
+}
+
+@each $value in $global-values {
+  .position-#{$value} {
+    position: $value;
+  }
+}
