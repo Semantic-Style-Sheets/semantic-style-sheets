@@ -1,0 +1,55 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+
+// ACCEPTED VALUES 
+// normal
+// stretch
+// center
+// start
+// end
+// flex-start
+// flex-end
+// self-start
+// self-end
+// anchor-center
+// baseline
+// first baseline
+// last baseline 
+// safe center
+// unsafe center
+
+@import '../functions.scss';
+@import '../values.scss';
+
+$values: (
+    normal, // TODO: "normal" seems to appear in many places, why?
+    stretch,
+    center,
+    start,
+    end,
+    flex-start,
+    flex-end,
+    self-start,
+    self-end,
+    anchor-center,
+    baseline,
+    first baseline,
+    last baseline ,
+    safe center,
+    unsafe center,
+);
+
+@each $value in $values {
+    $stringValue: inspect($value); // Convert the value to a string
+    $class-name: str-replace($stringValue, ' ', '-');
+    .align-items-#{$class-name} {
+      align-items: #{$value};
+    }
+}
+
+@each $value in $global-values {
+    $stringValue: inspect($value); // Convert the value to a string
+    $class-name: str-replace($stringValue, ' ', '-');
+    .align-items-#{$class-name} {
+        align-items: #{$value};
+    }
+  }
