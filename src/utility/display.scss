@@ -4,7 +4,7 @@
 @import '../values.scss';
 
 // TODO: Find out if there are more values here?
-$displayValues: (
+$values: (
   block,
   inline,
   inline-block,
@@ -28,7 +28,7 @@ $displayValues: (
   list-item,
 );
 
-@each $value in $displayValues {
+@each $value in $values {
   $stringValue: inspect($value); // Convert the value to a string
   $class-name: str-replace($stringValue, ' ', '-');
   .display-#{$class-name} {
