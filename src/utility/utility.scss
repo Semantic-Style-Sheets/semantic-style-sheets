@@ -4,13 +4,10 @@
 @use './gap.scss';
 @use './font-weight.scss';
 @use './flex-grow.scss';
+@use './flex-wrap.scss';
 @use './cursor.scss';
 
 /* Utility classes */
-
-.flex-wrap-wrap {
-    flex-wrap: wrap;
-}
 
 .align-items-flex-start {
     align-items: flex-start;

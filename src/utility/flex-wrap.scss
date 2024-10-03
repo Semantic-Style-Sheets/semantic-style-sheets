@@ -1,0 +1,26 @@
+// https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
+
+// ACCEPTED VALUES
+// nowrap
+// wrap
+// wrap-reverse
+
+@import '../values.scss';
+
+$values: (
+    nowrap,
+    wrap,
+    wrap-reverse
+);
+
+@each $value in $values {
+  .flex-wrap-#{$value} {
+    flex-wrap: #{$value};
+  }
+}
+
+@each $value in $global-values {
+  .flex-grow-#{$value} {
+    flex-wrap: #{$value};
+  }
+}
